@@ -17,6 +17,14 @@ then
   TARGET_VERSION="$TARGET_VERSION-$(git rev-parse --short HEAD)"
 fi
 
-docker build --build-arg buildSha="$(git rev-parse HEAD)" -t alastairpaterson/microservice-template:"$TARGET_VERSION" .
+if ! docker build --build-arg buildSha="$(git rev-parse HEAD)" -t alastairpaterson/microservice-template:"$TARGET_VERSION" .
+then
+  echo "Docker build failed - please see output above"
+  exit 1
+fi
 
-docker push alastairpaterson/microservice-template:"$TARGET_VERSION"
+if ! docker push alastairpaterson/microservice-template:"$TARGET_VERSION"
+then
+  echo "Docker push failed - please see output above"
+  exit 1
+fi
