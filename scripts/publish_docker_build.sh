@@ -6,15 +6,7 @@ then
   exit 1
 fi
 
-if ! CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-then
-  echo "Failed to determine current git branch"
-  exit 1
-fi
-
-echo "Branch is $CURRENT_BRANCH"
-
-if [ "$CURRENT_BRANCH" != "master" ]
+if [ "$TRAVIS_BRANCH" != "master" ]
 then
   TARGET_VERSION="$TARGET_VERSION-$(git rev-parse --short HEAD)"
 fi
