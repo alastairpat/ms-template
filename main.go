@@ -13,6 +13,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	e.GET("/", handlers.GetRootIndex)
+	e.GET("/status", handlers.GetStatusIndex)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
