@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
-apt -y update; apt -y install jq
+sudo apt-get -y install jq
 
-TARGET_VERSION=$(jq --raw-output '.version' ./metadata.json)
-
-if [ $? -ne 0 ]
+if ! TARGET_VERSION=$(jq --raw-output '.version' ./metadata.json)
 then
   echo "Failed to determine application version. Make sure metadata.json exists in the current directory"
   exit 1

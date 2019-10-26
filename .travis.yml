@@ -4,3 +4,7 @@ go: "1.13"
 
 before_install:
   - ./scripts/check_release_exists.sh
+
+addons:
+  apt:
+    update: true
