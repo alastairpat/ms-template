@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/alastairpat/ms-template.svg?branch=master)](https://travis-ci.com/alastairpat/ms-template)
 
-[Example Service on Docker Hub](https://hub.docker.com/r/alastairpaterson/microservice-template)
+[Example Service on Docker Hub](https://hub.docker.com/r/alastairpaterson/example-service)
 
 The Example Service provides an example microservice template.
 It is designed to illustrate best practices, and can be adopted for use by other teams
@@ -25,10 +25,10 @@ It is assumed your computer is set up for both Go development and Docker.
   - After cloning this repository, you should create a branch for your work. Changes to the
     `master` branch, except via pull request, are not possible.
   - After creating your branch, you should increment the version number in 
-  `metadata.json`. 
+    `metadata.json`. 
 * Building and Running
   - You can build Example Service by running `go build` from the root directory. Similarly,
-    you can run `go test [-cov]` to run unit tests (optionally with coverage checking).
+    you can run `go test [-cover] -v ./...` to run unit tests (optionally with coverage information).
   - The `Dockerfile` expects to find a Linux binary named `service` in the `output` directory.
   - You can build the application and Dockerfile by invoking `./scripts/build_application_and_image.sh` 
     from the root of this project
