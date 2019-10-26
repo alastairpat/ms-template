@@ -12,6 +12,8 @@ then
   exit 1
 fi
 
+echo "Branch is $CURRENT_BRANCH"
+
 if [ "$CURRENT_BRANCH" != "master" ]
 then
   TARGET_VERSION="$TARGET_VERSION-$(git rev-parse --short HEAD)"
