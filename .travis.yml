@@ -7,6 +7,7 @@ before_install:
 
 after_success:
   - go build -o output/service
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - ./scripts/publish_docker_build.sh
 
 addons:
