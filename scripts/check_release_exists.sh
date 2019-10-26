@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
-sudo apt-get -y install jq
+sudo apt-get -y install jq > /dev/null
 
 if ! TARGET_VERSION=$(jq --raw-output '.version' ./metadata.json)
 then
