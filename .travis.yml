@@ -3,11 +3,12 @@ language: go
 go: "1.13"
 
 before_install:
+  - sudo apt-get -y install jq
   - ./scripts/check_release_exists.sh
 
 after_success:
-  - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o output/service
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - ./scripts/build_application_and_image.sh
   - ./scripts/publish_docker_build.sh
 
 addons:
