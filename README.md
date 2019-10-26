@@ -8,7 +8,7 @@ The Example Service provides an example microservice template.
 It is designed to illustrate best practices, and can be adopted for use by other teams
 with minimal changes.
 
-#### Ownership
+## Ownership
 
 Example Service is owned and supported by the Example Team.
 
@@ -16,7 +16,7 @@ Example Service is owned and supported by the Example Team.
 * Slack: [#example-team](https://slack.com/app_redirect?channel=example-team)
 * Documentation: [Example Team Confluence Space](https://confluence.example.com/example)
 
-#### Local Development
+## Local Development
 
 Example Service is written in GoLang and deployed as a Docker image. 
 It is assumed your computer is set up for both Go development and Docker.
@@ -33,7 +33,7 @@ It is assumed your computer is set up for both Go development and Docker.
   - You can build the application and Dockerfile by invoking `./scripts/build_application_and_image.sh` 
     from the root of this project
 
-#### Required Environment Variables
+## Required Environment Variables
 
 At present, Example Service requires no environmental variables to run. However, if it did,
 you should document them here:
@@ -43,14 +43,14 @@ you should document them here:
 | TZ              | Container timezone | UTC           | No        |
 | DATASOURCE_NAME | Datasource name    | (null)        | Yes       |
 
-#### Continuous Integration
+## Continuous Integration
 
 * Any pushed commits will automatically be tested with TravisCI. 
 * If the build passes, it will also generate a new Docker image that is pushed to Docker Hub. 
   - If the build is against a branch, it will be tagged as `version-SHA short hash` (for example, `1.2.3-a1b2c3d`).
   - If the build is against `master`, it will simply be tagged as `version`.
 
-#### Release Management
+## Release Management
 
 * All changes to Example Service must happen via a pull request. 
 * [Semantic Versioning](https://semver.org/) is used for version numbers.
