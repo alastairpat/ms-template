@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
-sudo apt-get -y install jq > /dev/null
+source ./scripts/common.sh
 
-if ! TARGET_VERSION=$(jq --raw-output '.version' ./metadata.json)
-then
-  echo "Failed to determine application version. Make sure metadata.json exists in the current directory"
-  exit 1
-fi
+validate_jq_installed
 
-docker manifest inspect alastairpaterson/microservice-template:"$TARGET_VERSION" > /dev/null 2> /dev/null
+get_application_version
 
-IMAGE_EXISTS=$?
+get_application_name
 
-if [ -$IMAGE_EXISTS -eq 0 ]
+if docker manifest inspect alastairpaterson/"$APPLICATION_NAME":"$TARGET_VERSION" > /dev/null 2> /dev/null
 then
   echo "Version $TARGET_VERSION has already been released! (Did you forget to bump the version in metadata.json?)"
   exit 1
