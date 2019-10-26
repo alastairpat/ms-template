@@ -38,10 +38,10 @@ It is assumed your computer is set up for both Go development and Docker.
 At present, Example Service requires no environmental variables to run. However, if it did,
 you should document them here:
 
-| Variable Name   | Description        | Default Value | Required? |
-| --------------- | ------------------ | ------------- | --------- |
-| TZ              | Container timezone | UTC           | No        |
-| DATASOURCE_NAME | Datasource name    | (null)        | Yes       |
+| Variable Name     | Description        | Default Value | Required? |
+| ----------------- | ------------------ | ------------- | --------- |
+| `TZ`              | Container timezone | UTC           | No        |
+| `DATASOURCE_NAME` | Datasource name    | (null)        | Yes       |
 
 ## Continuous Integration
 
