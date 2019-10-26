@@ -1,4 +1,4 @@
-module innablr
+module github.com/alastairpat/ms-template
 
 go 1.13
 
