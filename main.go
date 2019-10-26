@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/alastairpat/ms-template/handlers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"innablr/handlers"
 )
 
 func main() {
