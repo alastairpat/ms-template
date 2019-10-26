@@ -17,6 +17,6 @@ then
   TARGET_VERSION="$TARGET_VERSION-$(git rev-parse --short HEAD)"
 fi
 
-docker build --build-arg buildSha="$(git rev-parse HEAD)" -t alastairpaterson/microservice-template:"$TARGET_VERSION"
+docker build --build-arg buildSha="$(git rev-parse HEAD)" -t alastairpaterson/microservice-template:"$TARGET_VERSION" .
 
 docker push alastairpaterson/microservice-template:"$TARGET_VERSION"
